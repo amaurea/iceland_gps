@@ -1,0 +1,7 @@
+#!/bin/bash
+odir="$1"
+mkdir -p "$odir"
+wget -P "$odir" -i <(cat stations.txt | while read name; do
+	echo https://strokkur.raunvis.hi.is/gps/${name}_4hrap.png
+	echo https://strokkur.raunvis.hi.is/gps/${name}_8hrap.png
+done)
